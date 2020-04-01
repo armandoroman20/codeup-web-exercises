@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Warmup April 1st</title>
+</head>
+<body>
+<script>
+
+    // this function will add 2 to a number that is imputed,
+    // taking into consideration a negative number
+
+    function twoMoreAwayFromZero(num) {
+        if (num >= 0) {
+        return num + 2;
+        }   else {
+        return num - 2;
+        }
+    }
+
+    console.log(twoMoreAwayFromZero(2)); // return 4
+    console.log(twoMoreAwayFromZero(0)); // return 2
+    console.log(twoMoreAwayFromZero(0.5)); // return 2.5
+    console.log(twoMoreAwayFromZero(-2)); // returns -4
+    console.log(twoMoreAwayFromZero(-3.5)); // returns -5.5
+
+
+</script>
+</body>
+</html>
