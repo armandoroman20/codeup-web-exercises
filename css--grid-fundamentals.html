@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Grid Fundamentals</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            text-align: center; /* this ALSO centers grid, with combo of
+            display: inline-grid; in the MAIN */
+        }
+        main {
+            background: lightgreen;
+            /*grid-gap: 10px; !* places a gap between grid cells *!*/
+            /*grid-column-gap: 2em; !* this places gap between columns *!*/
+            display: inline-grid;
+            /*width: 600px;*/
+            /*height: 600px;*/
+            /*grid-template-columns: 1fr 1fr 1fr;*/
+            /*grid-template-rows: 1fr 1fr 1fr;*/
+            grid-template-columns: 200px 200px 200px;
+            grid-template-rows: 200px 200px 200px;
+            /*justify-content: center; !* 1 option to center the grid *!*/
+        }
+        main div {
+            font-size: 2em;
+            color: white;
+            background: grey;
+            border: 2px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+<main>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+    <div>9</div>
+</main>
+</body>
+</html>
