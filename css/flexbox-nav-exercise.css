@@ -9,7 +9,7 @@ nav {
     justify-content: space-between;
     font-family: 'Work Sans', sans-serif;
     height: 4em;
-    left: 0;
+    left: 0; /* thses next 3 lines are positioning the actual navbar */
     right: 0;
     top: 0;
     width: 100%;
@@ -17,7 +17,7 @@ nav {
 }
 
 .nav li {
-    padding-right: 30px;
+    padding-right: 30px; /* this spaces the left links */
 }
 
 .top-nav {
@@ -25,13 +25,13 @@ nav {
 }
 
 .icons li {
-    padding-left: 30px;
+    padding-left: 30px; /* this spaces the right links */
 }
 
 nav ul {
     display:flex;
-    padding: 0;
-    margin: 0;
+    padding: 0; /* this spaces the left links starting from the left of bar */
+    margin: .5em; /* this will space all links away from the edge of the navbar */
     list-style: none;
 }
 
@@ -46,7 +46,7 @@ a {
     margin: auto;
 }
 
-#logo-a {
+#logo {
     font-family: 'Montserrat', sans-serif;
     position: absolute;
     right: 50%;
