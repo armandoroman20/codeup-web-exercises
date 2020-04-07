@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS grid layout 1</title>
+<!--    <link rel="stylesheet" href="css/css-grid-layout-1.css"-->
+</head>
+<body>
+<div class="wrapper">
+    <header>
+        <h1>header</h1>
+    </header>
+    <nav>
+        <h1>nav</h1>
+    </nav>
+    <article>
+
+       <h1>article</h1>
+
+    </article>
+    <ads>
+       <h1>ads</h1>
+    </ads>
+
+    <footer>
+        <h1>footer</h1>
+    </footer>
+
+</div>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        background-color: white;
+    }
+
+    .wrapper {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-areas:
+                "header header header header header"
+                "nav article article article ads"
+                "nav article article article ads"
+                "nav article article article ads"
+                "nav footer footer footer footer";
+        grid-row-gap: 1em;
+        grid-column-gap: 1em;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    header {
+        grid-area: header;
+    }
+
+    nav {
+        grid-area: nav;
+    }
+
+    article {
+        grid-area: article;
+
+    }
+
+    ads {
+        grid-area: ads;
+
+    }
+
+    footer {
+        grid-area: footer;
+    }
+
+    header, nav, article, ads, footer {
+        background-color: #FED700;
+    }
+    .wrapper h1 {
+        padding: 1em;
+        font-size: 1em;
+    }
+
+
+</style>
+
+
+</body>
+
+
+</html>
