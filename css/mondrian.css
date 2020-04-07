@@ -2,10 +2,9 @@
     box-sizing: border-box;
 }
 body {
-    margin: 2em; /* spaced from the top */
+    margin: 10em;
     text-align: center;
-    position: center;
-    /*border: 1em solid black;*/
+
 }
 main {
     display: inline-grid;
@@ -15,12 +14,9 @@ main {
     grid-template-rows: repeat(8, 1fr);
 
 }
+
 main div {
-    font-size: 2em;
     border: 2px solid black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .one {
@@ -60,15 +56,15 @@ main div {
 }
 
 .one, .nine {
-    background-color: blue;
+    background-color: #2F447B;
 }
 
 .two, .eight {
-    background-color: red;
+    background-color: #DD1C21;
 }
 
 .three, .seven {
-    background-color: yellow;
+    background-color: #FCCC09;
 }
 
 .six, .four, .five {
