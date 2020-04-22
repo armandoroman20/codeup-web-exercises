@@ -220,40 +220,40 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  */
 
 
-confirm("Would you like to enter a number?");
+    confirm("Would you like to enter a number?");
 
-var userNumber = Number(prompt("please enter a number"));
+    var userNumber = Number(prompt("please enter a number"));
 
-function input() {
-    if (userNumber % 2 === 0) {
-        alert("You're number, " + userNumber + " is even");
+    function input() {
+        if (userNumber % 2 === 0) {
+            alert("You're number, " + userNumber + " is even");
+        } else {
+            alert("You're number, " + userNumber + " is odd");
+        }
+    }
+
+    function plusHundred() {
+        alert("You're number plus 100 is " + (userNumber + 100));
+    }
+
+    function isPositive() {
+        if (userNumber > 0) {
+            alert("You're number is positive");
+        } else {
+            alert("You're number is negative");
+        }
+    }
+
+
+    if (!isNaN(userNumber)) {
+        input();
+        plusHundred();
+        isPositive();
+
+
     } else {
-        alert("You're number, " + userNumber + " is odd");
-    }
-}
+            alert("please enter a number to continue")
 
-function plusHundred() {
-    alert("You're number plus 100 is " + (userNumber + 100));
-}
-
-function isPositive() {
-    if (userNumber > 0) {
-        alert("You're number is positive");
-    } else {
-        alert("You're number is negative");
-    }
-}
-
-
-if (!isNaN(userNumber)) {
-    input();
-    plusHundred();
-    isPositive();
-
-
-} else {
-        alert("please enter a number to continue")
-
-    }
+        }
 
 
