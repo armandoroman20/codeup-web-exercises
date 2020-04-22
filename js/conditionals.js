@@ -172,35 +172,35 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  */
 // Generate a random number between 0 and 6
 
-var luckyNumber = Math.floor(Math.random() * 6);
-
-var price = Number(prompt("Enter Bill Price"));
-
-alert("Your lucky number was " + luckyNumber);
-
-alert("Your price was " + price + " before your discount!");
-
-function discount(num) {
-    if (num === 0) {
-        alert ("You're price is still $, " + price);
-    }
-    else if (num === 1) {
-        alert ("You're new price is, $" + (price - (price * .10)));
-    } else if (num === 2) {
-        alert ("You're new price is, $" + (price - (price * .25)));
-    } else if (num === 3) {
-        alert ("You're new price is, $" + (price - (price * .35)));
-    } else if(num === 4) {
-        alert ("You're new price is, $" + (price - (price * .50)));
-    } else if (num === 5) {
-        alert ("You're new price is, $" + (price - (price * .65)));
-    } else {
-        return "please enter a number 1-6";
-    }
-}
-
-
-console.log(discount(luckyNumber));
+    // var luckyNumber = Math.floor(Math.random() * 6);
+    //
+    // var price = Number(prompt("Enter Bill Price"));
+    //
+    // alert("Your lucky number was " + luckyNumber);
+    //
+    // alert("Your price was " + price + " before your discount!");
+    //
+    // function discount(num) {
+    //     if (num === 0) {
+    //         alert ("Sorry, you get no discount. Your price is still $" + price);
+    //     }
+    //     else if (num === 1) {
+    //         alert ("You're new price is, $" + (price - (price * .10)));
+    //     } else if (num === 2) {
+    //         alert ("You're new price is, $" + (price - (price * .25)));
+    //     } else if (num === 3) {
+    //         alert ("You're new price is, $" + (price - (price * .35)));
+    //     } else if(num === 4) {
+    //         alert ("You're new price is, $" + (price - (price * .50)));
+    //     } else if (num === 5) {
+    //         alert ("You're new price is, $" + (price - (price * .65)));
+    //     } else {
+    //         return "please enter a number between 1-6";
+    //     }
+    // }
+    //
+    //
+    // console.log(discount(luckyNumber));
 
 /**
  * TODO:
@@ -218,5 +218,42 @@ console.log(discount(luckyNumber));
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
+
+
+confirm("Would you like to enter a number?");
+
+var userNumber = Number(prompt("please enter a number"));
+
+function input() {
+    if (userNumber % 2 === 0) {
+        alert("You're number, " + userNumber + " is even");
+    } else {
+        alert("You're number, " + userNumber + " is odd");
+    }
+}
+
+function plusHundred() {
+    alert("You're number plus 100 is " + (userNumber + 100));
+}
+
+function isPositive() {
+    if (userNumber > 0) {
+        alert("You're number is positive");
+    } else {
+        alert("You're number is negative");
+    }
+}
+
+
+if (!isNaN(userNumber)) {
+    input();
+    plusHundred();
+    isPositive();
+
+
+} else {
+        alert("please enter a number to continue")
+
+    }
 
 
