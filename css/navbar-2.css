@@ -1,0 +1,92 @@
+* {
+    box-sizing: border-box;
+}
+
+nav {
+    background: lightgray;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Work Sans', sans-serif;
+    height: 4em;
+    left: 0;
+    right: 0;
+    top: 0;
+    width: 100%;
+    position: fixed;
+}
+
+.nav li {
+    padding-right: 30px;
+}
+
+.top-nav {
+    font-weight: bold;
+}
+
+.icons li {
+    padding-left: 30px;
+}
+
+nav ul {
+    display:flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.top-nav a:hover {
+    color: blue;
+}
+ .nav a {
+    display: inline-block;
+    text-decoration: none;
+    margin: auto;
+}
+
+ .top-nav a {
+     color: black; /* this is changing all nav links black */
+    text-decoration: none; /* this is deleting underline on the top links */
+ }
+
+#logo-1 {
+    font-family: 'Montserrat', sans-serif;
+    position: absolute;
+    right: 50%;
+    font-size: 3em;
+    padding-top: .2em;
+    padding-bottom:.2em;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+}
+.top-footer a {
+    text-decoration: none;
+}
+
+#logo-2 {
+    /*font-family: 'Montserrat', sans-serif;*/
+}
+
+.footer a {
+    color: white;
+
+}
+.footer li {
+    list-style: none;
+}
+

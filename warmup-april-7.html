@@ -7,29 +7,40 @@
 <body>
 <script>
 
-    function isEvenNum(num) {
-        if (num % 2 === 0) {
-            return true;
+    // function isEvenNum(num) {
+    //     if (num % 2 === 0) {
+    //         return true;
+    //     } else {
+    //        return false;
+    //     }
+    // }
+    //
+    // console.log(isEvenNum(4));
+    //
+    //
+    //
+    // function returnEvenOddMessage(num) {
+    //     if (isEvenNum(num)) {
+    //         return "is even";
+    //     } else {
+    //         return "is odd";
+    //     }
+    // }
+    //
+    // console.log(returnEvenOddMessage(2));
+    // console.log(returnEvenOddMessage(4));
+    // console.log(returnEvenOddMessage(77));
+
+    function isLarger(n1, n2) {
+        if (n1 >= n2) {
+            return n1;
         } else {
-           return false;
+            return n2;
         }
     }
 
-    console.log(isEvenNum(4));
-
-
-
-    function returnEvenOddMessage(num) {
-        if (isEvenNum(num)) {
-            return "is even";
-        } else {
-            return "is odd";
-        }
-    }
-
-    console.log(returnEvenOddMessage(2));
-    console.log(returnEvenOddMessage(4));
-    console.log(returnEvenOddMessage(77));
+    console.log(isLarger(4 , 3)); /* this should return x */
+    console.log(isLarger(2, 10)); /* this should return y */
 
 </script>
 </body>
