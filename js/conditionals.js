@@ -241,37 +241,43 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
     //     }
 
 //=============correct method
+//
+// function evenOrOdd(num) {
+//     return (num % 2 === 0) ? num + " is an even number" : num + " is an odd number";
+// }
+//
+// function plusOneHundred(num) {
+//     return num + 100;
+// }
+//
+// function positiveOrNegative(num) {
+//     if (num > 0) {
+//         return num + " is a positive number";
+//     } else {
+//         return num + " is a negative number";
+//     }
+// }
+//
+// function numberGame() {
+//     if (confirm("Would you like to enter a number?")) {
+//         var userNum = parseFloat(prompt("Enter a number"));
+//         if (!isNaN(userNum)) {
+//             alert(evenOrOdd(userNum));
+//             alert(userNum + " plus 100 is equal to: " + plusOneHundred(userNum));
+//             alert(positiveOrNegative(userNum));
+//         } else {
+//             alert("You're no fun...");
+//         }
+//     } else {
+//         alert("Fine by me...");
+//
+//     }
+// }
+//
+// numberGame();
 
-function evenOrOdd(num) {
-    return (num % 2 === 0) ? num + " is an even number" : num + " is an odd number";
-}
 
-function plusOneHundred(num) {
-    return num + 100;
-}
+    const array = [1,2,3,4];
+   array.push(array.shift());
 
-function positiveOrNegative(num) {
-    if (num > 0) {
-        return num + " is a positive number";
-    } else {
-        return num + " is a negative number";
-    }
-}
-
-function numberGame() {
-    if (confirm("Would you like to enter a number?")) {
-        var userNum = parseFloat(prompt("Enter a number"));
-        if (!isNaN(userNum)) {
-            alert(evenOrOdd(userNum));
-            alert(userNum + " plus 100 is equal to: " + plusOneHundred(userNum));
-            alert(positiveOrNegative(userNum));
-        } else {
-            alert("You're no fun...");
-        }
-    } else {
-        alert("Fine by me...");
-
-    }
-}
-
-numberGame();
+console.log(array);
