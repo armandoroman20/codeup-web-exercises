@@ -16,11 +16,25 @@ console.log("Let's manipulate some arrays");
 var numStrings = ['three','four','five','six','seven'];
 
 // TO DO TOGETHER: Use the .push method to add the next String in the sequence.
+
+numStrings.push('eight');
+
 // TO DO TOGETHER: Use the .unshift method to add 'two' before 'three'.
 
+numStrings.unshift('two');
+
 // TO DO: Use the .push method to add 'nine' and 'ten'.
+
+numStrings.push('nine', 'ten');
+
 // TO DO: Use .unshift to add 'zero' and 'one'. Can this be done with one statement?
+
+numStrings.unshift('zero', 'one');
+
 // Console log your results.
+
+console.log(numStrings);
+
 
 /* ***************************************************************
 * 						REMOVING ELEMENTS
