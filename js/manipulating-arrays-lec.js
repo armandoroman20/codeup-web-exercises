@@ -10,6 +10,8 @@ console.log("Let's manipulate some arrays");
 /* ***************************************************************
 * 						ADDING ELEMENTS
 *************************************************************** */
+// these methods return the length of the array
+// modifies original array
 // .push adds elements to the end of an array
 // .unshift adds elements to the beginning of an array
 
@@ -17,19 +19,19 @@ var numStrings = ['three','four','five','six','seven'];
 
 // TO DO TOGETHER: Use the .push method to add the next String in the sequence.
 
-numStrings.push('eight');
+console.log(numStrings.push('eight'));
 
 // TO DO TOGETHER: Use the .unshift method to add 'two' before 'three'.
 
-numStrings.unshift('two');
+console.log(numStrings.unshift('two'));
 
 // TO DO: Use the .push method to add 'nine' and 'ten'.
 
-numStrings.push('nine', 'ten');
+console.log(numStrings.push('nine', 'ten'));
 
 // TO DO: Use .unshift to add 'zero' and 'one'. Can this be done with one statement?
 
-numStrings.unshift('zero', 'one');
+console.log(numStrings.unshift('zero', 'one'));
 
 // Console log your results.
 
@@ -39,16 +41,32 @@ console.log(numStrings);
 /* ***************************************************************
 * 						REMOVING ELEMENTS
 *************************************************************** */
+// these methods
 
 var activeCohorts = ['deimos','europa','fortuna','ganymede','ada','bayes'];
 
 // TO DO TOGETHER: Use the .pop method to remove the last cohort in the list.
+
+console.log(activeCohorts.pop());
+console.log(activeCohorts);
+
+
 // TO DO TOGETHER: Use the .shift method to remove the first cohort in the list.
+
+console.log(activeCohorts.shift());
+console.log(activeCohorts);
+
+
 // What do we get when we log the return of these methods?
+
+
 
 // TO DO: Use a combination of .pop and .shift methods until only 'fortuna' and 'ganymede' are
 // left in the array. Log the updated array.
 
+activeCohorts.pop();
+activeCohorts.shift();
+console.log(activeCohorts);
 
 /* ***************************************************************
 * 					LOCATING ARRAY ELEMENTS
@@ -57,9 +75,20 @@ var activeCohorts = ['deimos','europa','fortuna','ganymede','ada','bayes'];
 var fruit = ['apples','oranges','grapes','bananas','apples','oranges','grapes'];
 
 // TO DO TOGETHER: Find the first index of 'apples' in the array
+
+console.log(fruit.indexOf('apples'));
+
 // TO DO TOGETHER: Find the last index of 'apples' in the array
 
+console.log(fruit.lastIndexOf('apples'));
+
 // TO DO: If the last element in the fruits array is 'grapes', remove it from the list.
+
+if (fruit.lastIndexOf('grapes') === fruit.length -1) {
+    fruit.pop();
+}
+
+console.log(fruit);
 // Console log your new array.
 
 
@@ -72,9 +101,14 @@ var instructors = ['justin','david','sophie','vivian','casey','trant','daniel'];
 // TO DO TOGETHER: Create a variable named ganymedeInstructors that stores an array list of
 // 'justin','david', and 'sophie'. Do this with the .slice method.
 
+var ganymedeInstructors = instructors.slice(0,3);
+console.log(ganymedeInstructors);
 // TO DO TOGETHER: Create a variable named fortunaInstructors that stores an array list of all
 // instructors starting from 'vivian' onward.
 
+var fortunaInstructors = instructors.slice(3);
+console.log(fortunaInstructors);
+console.log(instructors);
 
 /* ***************************************************************
 * 							REVERSING
