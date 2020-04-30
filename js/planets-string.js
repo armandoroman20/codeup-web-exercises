@@ -10,7 +10,7 @@
      * console.log planetsArray to check your work
      */
 
-    var planetsArray = planetsString.split('|');
+    var planetsArray = planetsString.split('|'); // type in the pipe | to get rid of it and be replaced with comma
 
     console.log(planetsArray);
 
@@ -27,4 +27,14 @@
 
     var newPlanets = planetsArray.join('\n');
     console.log(newPlanets);
+
+
+    var planetsList = "<ul>";
+        planetsArray.forEach(function(planet) {
+            planetsList += "<li>" + planet + "</li>";
+        });
+    planetsList += "</ul>";
+
+
+    document.getElementById('planets-list').innerHTML = planetsList;
 })();
