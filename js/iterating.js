@@ -22,10 +22,10 @@
      * accessing each element's index.
      */
 
-    // console.log(names[0]);
-    // console.log(names[1]);
-    // console.log(names[2]);
-    // console.log(names[3]);
+    console.log(names[0]);
+    console.log(names[1]);
+    console.log(names[2]);
+    console.log(names[3]);
 
     /**
      * TODO:
@@ -40,6 +40,9 @@
      * TODO:
      * Refactor your above code to use a `forEach` loop
      */
+    names.forEach(function(name, index, array) {
+        console.log(name, index, array);
+        });
 
     /**
      * TODO:
@@ -48,11 +51,26 @@
      * - first: returns the first item in the array
      * - second: returns the second item in the array
      * - last: returns the last item in the array
-     *
      * Example:
      *  > first([1, 2, 3, 4, 5]) // returns 1
      *  > second([1, 2, 3, 4, 5]) // returns 2
      *  > last([1, 2, 3, 4, 5]) // return 5
      */
+
+    var numbers = [1, 2, 3, 4, 5];
+    function first () {
+        return numbers[0];
+    }
+
+    function second () {
+        return numbers[1];
+    }
+
+    function last () {
+        return (numbers[numbers.length -1]);
+    }
+    console.log(first());
+    console.log(second());
+    console.log(last());
 
 })();
