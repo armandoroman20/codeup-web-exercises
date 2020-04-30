@@ -116,6 +116,7 @@ console.log(instructors);
 
 // TO DO TOGETHER: Take the instructors array and reverse it.
 // What will the following console log display?
+instructors.reverse();
 console.log(instructors);
 
 /* ***************************************************************
@@ -124,8 +125,17 @@ console.log(instructors);
 
 // TO DO TOGETHER: Sort the instructors array.
 // Take a look at the results of the console log.
+console.log(instructors.sort());
 console.log(instructors);
 
+
+var myString = [5,6, 'one' , 1,2,'3','4'];
+// ['5', '6', 'one', '1', '2', '3', '4'] turns everything into strings
+// ['1', '2', '3', '4','5', '6','one'] then sorts them
+// output preserves data type
+
+console.log(myString.sort());
+console.log(instructors);
 /* ***************************************************************
 * 				CONVERTING BETWEEN STRINGS AND ARRAYS
 *************************************************************** */
@@ -134,7 +144,11 @@ var submarine = "We all live in a yellow submarine.";
 
 // TO DO TOGETHER: Split this string up into an array of elements
 // What will this console log display?
+var submarineArray = submarine.split(' ');
 console.log(submarine);
-
+console.log(submarineArray);
 // TO DO: Now, join the array elements into a string. Each word should be in its own separate line.
 // Log your results.
+
+var newSubmarine = submarineArray.join('\n');
+console.log(newSubmarine);
