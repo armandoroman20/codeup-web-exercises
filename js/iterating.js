@@ -58,19 +58,19 @@
      */
 
     var numbers = [1, 2, 3, 4, 5];
-    function first () {
-        return numbers[0];
+    function first (arr) {
+        return arr[0];
     }
 
-    function second () {
-        return numbers[1];
+    function second (arr) {
+        return arr[1];
     }
 
-    function last () {
-        return (numbers[numbers.length -1]);
+    function last (arr) {
+        return (arr[arr.length -1]);
     }
-    console.log(first());
-    console.log(second());
-    console.log(last());
+    console.log(first(numbers));
+    console.log(second(numbers));
+    console.log(last(numbers));
 
 })();
