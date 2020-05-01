@@ -20,6 +20,25 @@
  * console.logging the function's return value
  */
 
+//     function analyzeColor(color) {
+//         if (color === 'blue') {
+//             return "The sky is blue";
+//         }  else if (color === 'red') {
+//             return "Firetrucks are red";
+//         }  else  {
+//             return "I dont know nothing about " + color;
+//         }
+//     }
+//
+//
+//
+// console.log(analyzeColor('blue'));
+// console.log(analyzeColor('red'));
+// console.log(analyzeColor('cyan'));
+// console.log(analyzeColor('yellow'));
+// console.log(analyzeColor('purple'));
+//
+
 
     // function analyzeColor(color) {
     //     if (color === 'blue') {
@@ -52,6 +71,8 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Pass the `randomColor` variable to your function and console.log the results.
  * You should see a different message every time you refresh the page
  */
+
+// console.log(analyzeColor(randomColor));
 
     // console.log(analyzeColor(randomColor));
 
@@ -105,7 +126,6 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
 //
 // console.log(analyzeColorSwitch(randomColor));
 
-
         //^^^^^^^^^^^^^^^PROPER OUTPUT^^^^^^^^^
 /**
  * TODO:
@@ -145,26 +165,26 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * return value.
  */
 
-    //
-    //
-    // function calculateTotal(luckyNum, bill) {
-    //         if (luckyNum === 0){
-    //             return bill;
-    //         }
-    //         else if (luckyNum === 1) {
-    //             return (bill * .90);
-    //         } else if (luckyNum === 2) {
-    //             return (bill * .75);
-    //         } else if (luckyNum === 3) {
-    //             return (bill * .65);
-    //         } else if(luckyNum === 4) {
-    //             return (bill * .50);
-    //         } else {
-    //             return "You get it all free!";
-    //         }
-    // }
 
 
+    function calculateTotal(luckyNum, bill) {
+            if (luckyNum === 0){
+                return bill;
+            }
+            else if (luckyNum === 1) {
+                return (bill * .90);
+            } else if (luckyNum === 2) {
+                return (bill * .75);
+            } else if (luckyNum === 3) {
+                return (bill * .65);
+            } else if(luckyNum === 4) {
+                return (bill * .50);
+            } else {
+                return "You get it all free!";
+            }
+    }
+
+console.log(calculateTotal(2, 300));
 
 
 
@@ -178,7 +198,7 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  */
 // Generate a random number between 0 and 6
 //
-//     var luckyNumber = Math.floor(Math.random() * 6);
+    var luckyNumber = Math.floor(Math.random() * 6);
 //
 //     var userBill = parseFloat(prompt("Enter Bill Price"));
 //
@@ -276,8 +296,8 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
 //
 // numberGame();
 
-
-    const array = [1,2,3,4];
-   array.push(array.shift());
-
-console.log(array);
+//
+//     const array = [1,2,3,4];
+//    array.push(array.shift());
+//
+// console.log(array);
