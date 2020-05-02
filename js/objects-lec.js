@@ -354,30 +354,30 @@
     //     console.log(dog.owner.car.make + " - " + dog.owner.car.model);
     // });
 
-    // for (var k = 0; k < dogs.length; k++) {
-    //     console.log(dogs[k].owner.car.make + " - " + dogs[k].owner.car.model);
-    //
-    // }
+    for (var k = 0; k < dogs.length; k++) {
+        console.log(dogs[k].owner.car.make + " - " + dogs[k].owner.car.model);
+
+    }
 
     // console.log(peridot["owner"]["name"]);
 
     // Iterate through our dogs array, and log a message to the console based on their breed property. If the breed is an array longer than one, log a message stating they are a mix of the different elements.
 
-    dogs.forEach(function(dog) {
-        var str = "";
-        if (dog.breed.length > 1) {
-            dog.breed.forEach(function (breed, i, arr) {
-                if (i === arr.length - 1) {
-                    str += breed + " mix."
-                } else {
-                    str += breed + ", "
-                }
-            });
-        } else {
-            str = dog.breed + ".";
-        }
-        console.log(dog.name + " is a(n) " + str);
-    });
+    // dogs.forEach(function(dog) {
+    //     var str = "";
+    //     if (dog.breed.length > 1) {
+    //         dog.breed.forEach(function (breed, i, arr) {
+    //             if (i === arr.length - 1) {
+    //                 str += breed + " mix."
+    //             } else {
+    //                 str += breed + ", "
+    //             }
+    //         });
+    //     } else {
+    //         str = dog.breed + ".";
+    //     }
+    //     console.log(dog.name + " is a(n) " + str);
+    // });
 
     // var str = "";
     // if (peridot.breed.length > 1) {

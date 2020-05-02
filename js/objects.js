@@ -31,6 +31,7 @@
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
 
+
     person.sayHello = function() {
         return ("Hello from " + this.firstName + " " + this.lastName + "!");
     };
@@ -51,11 +52,26 @@
      * and console.log the relevant messages for each person
      */
 
-    // var shoppers = [
-    //     {name: 'Cameron', amount: 180},
-    //     {name: 'Ryan', amount: 250},
-    //     {name: 'George', amount: 320}
-    // ];
+    var shoppers = [
+        {name: 'Cameron',
+        amount: 180
+        },
+        {name: 'Ryan',
+        amount: 250
+        },
+        {name: 'George',
+        amount: 320
+        }
+    ];
+
+    for(var a = 0; a < shoppers.length; a++) {
+        var newAmount = (shoppers[a].amount * .88);
+        if(shoppers[a].amount > 200) {
+            console.log(shoppers[a].name + " you get a discount! \nYour price before the discount was: " + shoppers[a].amount +
+            " \nYour new amount is: " + newAmount);
+        }
+    }
+
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -69,6 +85,57 @@
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
+
+    var books = [
+
+        {
+            book: 1,
+            title: "Is it wrong to be strong? You be the judge.",
+            author: {
+                firstName: "Clark",
+                lastName: 'Kent',
+            }
+        },
+        {
+            book: 2,
+            title: "Am I a child trapped in a man's body, or is it the other way around?",
+            author: {
+                firstName: "Billy",
+                lastName: "Batson",
+            }
+        },
+        {
+            book: 3,
+            title: "True life: I'm addicted to messing with the timeline (A biography of The Flash)",
+            author: {
+                firstName: "Barry",
+                lastName: "Allen",
+            }
+        },
+        {
+            book: 4,
+            title: "You can keep your powers, I'M BATMAN!",
+            author: {
+                firstName: "Bruce",
+                lastName: "Wayne",
+            }
+        },
+        {
+            book: 5,
+            title: "Fish are friends not food (An argument against being pescatarian)",
+            author: {
+                firstName: "Arthur",
+                lastName: "Curry",
+            }
+        }
+
+    ];
+
+    console.log(books[0].title);
+    console.log(books[0].author.firstName);
+    console.log(books[0].author.lastName);
+    console.log(books[2].author.firstName);
+
 
     /**
      * TODO:
@@ -94,6 +161,13 @@
      *      ---
      *      ...
      */
+
+for(var i = 0; i < books.length; i++) {
+    console.log("Book # " + books[i].book );
+    console.log("Title: " + books[i].title);
+    console.log("Author: " + books[i].author.firstName + " " + books[i].author.lastName);
+}
+
 
     /**
      * Bonus:
