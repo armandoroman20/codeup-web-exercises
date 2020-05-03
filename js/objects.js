@@ -87,9 +87,7 @@
      */
 
     var books = [
-
         {
-            book: 1,
             title: "Is it wrong to be strong? You be the judge.",
             author: {
                 firstName: "Clark",
@@ -97,7 +95,6 @@
             }
         },
         {
-            book: 2,
             title: "Am I a child trapped in a man's body, or is it the other way around?",
             author: {
                 firstName: "Billy",
@@ -105,7 +102,6 @@
             }
         },
         {
-            book: 3,
             title: "True life: I'm addicted to messing with the timeline (A biography of The Flash)",
             author: {
                 firstName: "Barry",
@@ -113,7 +109,6 @@
             }
         },
         {
-            book: 4,
             title: "You can keep your powers, I'M BATMAN!",
             author: {
                 firstName: "Bruce",
@@ -121,20 +116,18 @@
             }
         },
         {
-            book: 5,
             title: "Fish are friends not food (An argument against being pescatarian)",
             author: {
                 firstName: "Arthur",
                 lastName: "Curry",
             }
         }
-
     ];
 
     console.log(books[0].title);
     console.log(books[0].author.firstName);
     console.log(books[0].author.lastName);
-    console.log(books[2].author.firstName);
+    console.log(books[2].author.firstName + " " + books[2].author.lastName);
 
 
     /**
@@ -162,11 +155,21 @@
      *      ...
      */
 
-for(var i = 0; i < books.length; i++) {
-    console.log("Book # " + books[i].book );
-    console.log("Title: " + books[i].title);
-    console.log("Author: " + books[i].author.firstName + " " + books[i].author.lastName);
-}
+
+        for (var i = 0; i < books.length; i++) {
+            function indexPlueOne(title) {
+                for (var i = 0; i < books.length; i++) {
+                    if(books[i].hasOwnProperty('title')) {
+                        if(books[i].title === title) {
+                            return ++i;
+                        }
+                    }
+                }
+            }
+            console.log("Book # " + indexPlueOne(books[i].title)+ "\nTitle: " + books[i].title + "\nAuthor: " + books[i].author.firstName + " " + books[i].author.lastName);
+            // console.log("Title: " + books[i].title);
+            // console.log("Author: " + books[i].author.firstName + " " + books[i].author.lastName);
+        }
 
 
     /**
