@@ -18,8 +18,8 @@
         lastName: "Roman",
     };
 
-    console.log(person.firstName);
-    console.log(person.lastName);
+    // console.log(person.firstName);
+    // console.log(person.lastName);
 
     /**
      * TODO:
@@ -33,7 +33,7 @@
 
 
     person.sayHello = function() {
-        return ("Hello from " + this.firstName + " " + this.lastName + "!");
+        return "Hello from " + this.firstName + " " + this.lastName + "!";
     };
 
     console.log(person.sayHello());
@@ -63,6 +63,20 @@
         amount: 320
         }
     ];
+
+
+    // function discountChecker(shoppers) {
+    //     shoppers.forEach(function(shopper) {
+    //         if(shopper.amount >= 200) {
+    //             console.log(shopper.name + " you get a discount! \nYour price before the discount was: " + shopper.amount.toFixed(2) + " \nYour new amount is: " + (shopper.amount - (shopper.amount * .12 )).toFixed(2));
+    //         } else {
+    //             console.log(shopper.name + "You dont qualify for a discount")
+    //         }
+    //     })
+    // }
+    //
+    // console.log(discountChecker(shoppers));
+
 
     for(var a = 0; a < shoppers.length; a++) {
         var newAmount = (shoppers[a].amount * .88);
@@ -127,8 +141,29 @@
     console.log(books[0].title);
     console.log(books[0].author.firstName);
     console.log(books[0].author.lastName);
-    console.log(books[2].author.firstName + " " + books[2].author.lastName);
 
+
+    //=========for loop method
+
+    function loggingBooks(books) {
+        for(var x = 0; x < books.length; x++) {
+            console.log("Book # " + (x + 1) + "\n" + "Book Title: " + books[x].title + "\n" + "Book Author: " + books[x].author.firstName + " " + books[x].author.lastName);
+        }
+    }
+
+    loggingBooks(books);
+
+
+    //===== forEach loop method
+
+
+    // function loggingBooks(books) {
+    //     books.forEach(function(books, index) {
+    //         console.log("Book # " + (index + 1) + "\n" + "Book Title: " + books.title + "\n" + "Book Author: " + books.author.firstName + " " + books.author.lastName)
+    //     })
+    // }
+    //
+    // loggingBooks(books);
 
     /**
      * TODO:
@@ -156,21 +191,21 @@
      */
 
 
-        for (var i = 0; i < books.length; i++) {
-            function indexPlueOne(title) {
-                for (var i = 0; i < books.length; i++) {
-                    if(books[i].hasOwnProperty('title')) {
-                        if(books[i].title === title) {
-                            return ++i;
-                        }
-                    }
-                }
-            }
-            console.log("Book # " + indexPlueOne(books[i].title)+ "\nTitle: " + books[i].title + "\nAuthor: " + books[i].author.firstName + " " + books[i].author.lastName);
-            // console.log("Title: " + books[i].title);
-            // console.log("Author: " + books[i].author.firstName + " " + books[i].author.lastName);
-        }
-
+        // for (var i = 0; i < books.length; i++) {
+        //     function indexPlueOne(title) {
+        //         for (var i = 0; i < books.length; i++) {
+        //             if(books[i].hasOwnProperty('title')) {
+        //                 if(books[i].title === title) {
+        //                     return ++i;
+        //                 }
+        //             }
+        //         }
+        //     }
+        //     console.log("Book # " + indexPlueOne(books[i].title)+ "\nTitle: " + books[i].title + "\nAuthor: " + books[i].author.firstName + " " + books[i].author.lastName);
+        //     // console.log("Title: " + books[i].title);
+        //     // console.log("Author: " + books[i].author.firstName + " " + books[i].author.lastName);
+        // }
+        //
 
     /**
      * Bonus:
@@ -182,5 +217,19 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+
+    function createBook(title, fName, lName, arr) {
+        var newBook = {
+            title: title,
+            author: {
+                firstName:fName,
+                lastName: lName
+            }
+        };
+        arr.push(newBook);
+        return arr;
+    }
+
+    createBook("How Learning Works", "Susan", "Amberose", books)
 
 })();
