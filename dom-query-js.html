@@ -44,16 +44,21 @@
 
         // TODO: Uncomment the next line and get all list items
         var listItems = document.getElementsByTagName("li");
-        // console.log(listItems);
+        console.log(listItems);
 
 
-        // TODO: Set text color on every other list item to grey
-        for(var i = 0; i < listItems.length; i+=2) {
-            listItems[i].style.color = "grey";
+        for(var i = 0; i < listItems.length; i+=1) {
+            // TODO: Set text color on every other list item to grey
+            if (i % 2 === 0) {
+                listItems[i].style.color = "grey";
+            }
+            // TODO: Set text color of li with dbid = 1 to blue
+            var dbid = listItems[i].getAttribute("data-dbid");
+            if (dbid === "1") {
+            listItems[i].style.color = "blue";
         }
-        // TODO: Set text color of li with dbid = 1 to blue
-            var itemOneColor = document.querySelector('li:nth-child(1)');
-            itemOneColor.style.color = "blue";
+        }
+
 
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
