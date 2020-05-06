@@ -92,21 +92,21 @@
 
     // may 1st
 
-    function fizzBuzz() {
-        for (var i = 0; i < 101; i++) {
-            if (i % 3 === 0 && i % 5 === 0) {
-                console.log(i + " FizzBuzz");
-            } else if (i % 3 === 0) {
-                console.log(i + " Fizz");
-            } else if (i % 5 === 0) {
-                console.log(i + " Buzz");
-            } else {
-                console.log(i);
-            }
-        }
-    }
-
-    console.log(fizzBuzz());
+    // function fizzBuzz() {
+    //     for (var i = 0; i < 101; i++) {
+    //         if (i % 3 === 0 && i % 5 === 0) {
+    //             console.log(i + " FizzBuzz");
+    //         } else if (i % 3 === 0) {
+    //             console.log(i + " Fizz");
+    //         } else if (i % 5 === 0) {
+    //             console.log(i + " Buzz");
+    //         } else {
+    //             console.log(i);
+    //         }
+    //     }
+    // }
+    //
+    // console.log(fizzBuzz());
 
 
     // may 5th warmup
@@ -123,23 +123,45 @@
     // Example input: [5, {'a': 'hello'}, 30, true, null]
     // Example output: true
 
-    function arrayInput(arr) {
-        for (var i = 0; i < arr.length; i++) {
-            if (arr[i] === arr.length) {
-                return true;
-            }
+    // function arrayInput(arr) {
+    //     for (var i = 0; i < arr.length; i++) {
+    //         if (arr[i] === arr.length) {
+    //             return true;
+    //         }
+    //     }
+    //     return false;
+    // }
+    //
+    // console.log(arrayInput([1]));
+    // console.log(arrayInput(['bob', 3, false]));
+    // console.log(arrayInput([{'a': 'hello'}, 10, true]));
+    // console.log(arrayInput([5, {'a': 'hello'}, 30, true, null]));
+
+
+    /// warmup may 6th
+
+// function raiseToFour (number) {
+//     if (!isNaN(number)) {
+//         return Math.pow(number, 4) ;
+//     } else {
+//         return false;
+//     }
+// }
+
+// ==== OR
+
+    function raiseToFour (number) {
+        if (!isNaN(number) && typeof number === "number") {
+            return number ** 4 ;
+        } else {
+            return false;
         }
-        return false;
     }
 
-    console.log(arrayInput([1]));
-    console.log(arrayInput(['bob', 3, false]));
-    console.log(arrayInput([{'a': 'hello'}, 10, true]));
-    console.log(arrayInput([5, {'a': 'hello'}, 30, true, null]));
-
-
-    /// OR ///
-
+console.log(raiseToFour(2));
+console.log(raiseToFour('hello'));
+console.log(raiseToFour(true));
+console.log(raiseToFour(NaN));
 
 
 </script>
