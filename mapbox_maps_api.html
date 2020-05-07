@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mapbox api</title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css' rel='stylesheet' />
+</head>
+<body>
+    <div id='map' style='height: 500px;'></div>
+
+    <script src="js/keys.js"></script>
+    <script src="js/mapbox-geocode-utils.js"></script>
+
+    <script>
+"use strict";
+
+    mapboxgl.accessToken = mapboxKey;
+
+
+    var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v9',
+            zoom: 10,
+            center: [-98.4936, 29.4241],
+        });
+
+    // geocode("1423 McCullough Ave, San Antonio, TX 78212", mapboxKey).then(function(result) {
+    //     map.setCenter(result);
+    //     map.setZoom(18);
+    // });
+    //
+    // var marker = new mapboxgl.Marker();
+    //
+    // marker
+    //     .setLngLat([-98.492204, 29.442616])
+    //     .addTo(map);
+    //
+    //
+    // var popup = new mapboxgl.Popup();
+    //
+    // popup.setHTML("Armadillos Texas Style Burgers");
+    // marker.setPopup(popup);
+
+
+        // var restaurants = [
+        //
+        //     [-98.492204, 29.442616],
+        //
+        //     [-98.492007, 29.471838],
+        //
+        //     [-98.508174, 29.48779]
+        //
+        // ];
+
+// Refactor your code to display at least three of your favorite restaurants with information about each.
+// Create an array of objects with information about each restaurant to accomplish this.
+// Use a .forEach() loop rather than a for loop.
+
+//1. log the name of each restaurant
+//2. using geocodeing, log the coordinates of each
+//3. add markers for each coordinate
+//4. add popups to each marker with the HTML containing the restaurant name and message
+
+
+    var restaurants = [
+        {
+            name: "Armadillos Texas Style Burgers",
+            address: '1423 McCullough Ave, San Antonio, TX 78212',
+            message: "Best Burgers!",
+            // address: [-98.492204, 29.442616]
+        },
+        {
+            name: "Sabor Cocina Bar",
+            address: '4331 McCullough Ave, San Antonio, TX 78212',
+            message: "Get the enchilads verdres!",
+            // address: [-98.492007, 29.471838]
+        },
+        {
+            name: "Beijing Express",
+            address: '4407 Blanco Rd, San Antonio, TX 78212',
+            message: "Lemon chicken nuff said",
+            // address: [-98.508174, 29.48779]
+        }
+    ];
+
+        function showAllInfo (restaurants) {
+            restaurants.forEach(function(restaurant) {
+                geocode(restaurant.address, mapboxKey).then(function(coords) {
+                    var marker = new mapboxgl.Marker()
+                        .setLngLat(coords)
+                        .addTo(map);
+                    var popup = new mapboxgl.Popup()
+                        .setHTML('<h3>' + restaurant.name + '</h3>' + '<p>' + restaurant.message);
+                    marker.setPopup(popup);
+                });
+            });
+        }
+    showAllInfo(restaurants);
+
+// the singular restaurant vs the array restaurants makes a difference, singular with display specific address
+
+
+
+
+    </script>
+</body>
+</html>
