@@ -30,7 +30,7 @@ $(document).ready(function() {
 
 	// TODO TOGETHER: Change the background color of the id 'book-welcome'
 
-	$('#book-welcome').css('background-color', 'red');
+	$('#book-welcome').css('background-color', 'purple');
 
 	// TODO: Select the contents/html of the id 'book-bundle-one' and set equal to the variable 'bookBundle'. Console.log the contents
 
@@ -39,7 +39,17 @@ $(document).ready(function() {
 
 	// TODO: Change one css property of the id 'container'
 
-	$('#container').css('color', 'blue');
+	//==== STYLING the loooong way, use method below this for multiple styling
+
+	// $('#container').css('background-color', 'black');
+	// $('#container').css('color', 'white');
+
+	// multiple selector for CSS
+
+	$('#container').css({
+		'background-color': '#000',
+		'color': '#fff'
+	});
 
 	/**********************************************
 	 * 			** CLASS Selector **
@@ -48,6 +58,7 @@ $(document).ready(function() {
 
 	// TODO TOGETHER: Change the font size of all the .main-headings
 
+	$('.main-headings').css('font-size', '4em');
 
 	// TODO: Explore the following JS Bin example:
 	//  https://jsbin.com/topupe/1/edit?js,output
@@ -64,6 +75,7 @@ $(document).ready(function() {
 
 	// TODO TOGETHER: Change the background color of all paragraph tags
 
+	$('p').css('background-color', 'green')
 
 	// TODO: Explore the following JS Bin example:
 	//  https://jsbin.com/gayir/1/edit?js,output
@@ -80,7 +92,7 @@ $(document).ready(function() {
 
 	// TODO TOGETHER: Change the background color of id 'mystery-genre' and 'book-bundle-three' to red
 
-
+	$('#mystery-genre, #book-bundle-three').css('background-color', 'red')
 
 	// TODO: Explore the following JS Bin example:
 	//  https://jsbin.com/qejeli/1/edit?output
@@ -96,8 +108,8 @@ $(document).ready(function() {
 	// A common use is to put a border around every element to help see the layout of a page.
 
 	// TODO TOGETHER: Create a border around all elements
-
-
+	// this selects each separate node in the DOM
+	$('*').css('border', '1px solid blue')
 
 	// TODO: Explore the following JS Bin example:
 	//  https://jsbin.com/fivucu/1/edit?js,output
