@@ -109,6 +109,7 @@ $(document).ready(function() {
 
 	// TODO TOGETHER: Create a border around all elements
 	// this selects each separate node in the DOM
+
 	$('*').css('border', '1px solid blue')
 
 	// TODO: Explore the following JS Bin example:
