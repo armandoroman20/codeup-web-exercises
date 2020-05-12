@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mapbox</title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css' rel='stylesheet' />
+
+    <style>
+        #map {
+            width: 100%;
+            height: 300px
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+    <div id='map'></div>
+
+
+    <script src="js/keys.js"></script>
+<script src="js/mapbox-geocode-utils.js"></script>
+
+    <script>
+
+            mapboxgl.accessToken = mapboxKey;
+
+            var map = new mapboxgl.Map({
+                container: 'map',
+                style: 'mapbox://styles/mapbox/streets-v9',
+                zoom: 10,
+                center: [-98.4916, 29.4252],
+                // center: {lng: -98.4916, lat: 29.4252}
+            });
+
+            // customizing the map
+
+                // map.setCenter();
+                // map.setStyle();
+
+            // markers
+                //1 create marker object
+                // 2 set the location (lat Lng)
+                // 3 set what map we want to set it to (in this case the var map we created earlier)
+
+                // var marker = new mapboxgl.Marker();
+
+                // you can chain methods like this,
+                // set variable (marker),
+                // then underneath add the elements
+                // (THIS IS PREFERRED)
+
+                // marker
+                //     .setLngLat({lng: -98.4916, lat: 29.4252})
+                //     .addTo(map);
+
+                // instead of repeating like this
+
+                // marker.setLngLat({lng: -98.4916, lat: 29.4252});
+                // marker.addTo(map);
+
+            // popup
+
+                // var popup = new mapboxgl.Popup();
+                //
+                //     popup.setHTML("<h3>Hello world</h3>");
+
+                // this attaches it to the marker
+                // marker.setPopup(popup);
+
+
+            // events
+
+                // map.on("dragend", function() {
+                //     console.log("hello");
+                // });
+
+            // geocode reverse geocode
+
+                //// the geocode method from mapbox-geocoder-util.js
+
+                    //THE INSIDE BODY OF BELOW IS WHATEVER YOU WANT IT TO BE
+
+            geocode("600 Navarro St #350, San Antonio, TX 78205", mapboxKey).then(function(result) {
+                    console.log(result);
+                    map.setCenter(result);
+                    map.setZoom(20);
+                });
+
+                // reverse geocode method from mapbox-geocoder-utils.js
+                reverseGeocode({lng: -98.4861, lat: 29.4260}, mapboxKey).then(function(results) {
+                    // logs the address for The Alamo
+                    console.log(results);
+                });
+    </script>
+
+</body>
+</html>

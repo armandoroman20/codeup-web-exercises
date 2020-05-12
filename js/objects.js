@@ -138,32 +138,32 @@
         }
     ];
 
-    console.log(books[0].title);
-    console.log(books[0].author.firstName);
-    console.log(books[0].author.lastName);
+    // console.log(books[0].title);
+    // console.log(books[0].author.firstName);
+    // console.log(books[0].author.lastName);
 
 
     //=========for loop method
 
-    function loggingBooks(books) {
-        for(var x = 0; x < books.length; x++) {
-            console.log("Book # " + (x + 1) + "\n" + "Book Title: " + books[x].title + "\n" + "Book Author: " + books[x].author.firstName + " " + books[x].author.lastName);
-        }
-    }
-
-    loggingBooks(books);
+    // function loggingBooks(books) {
+    //     for(var x = 0; x < books.length; x++) {
+    //         console.log("Book # " + (x + 1) + "\n" + "Book Title: " + books[x].title + "\n" + "Book Author: " + books[x].author.firstName + " " + books[x].author.lastName);
+    //     }
+    // }
+    //
+    // loggingBooks(books);
 
 
     //===== forEach loop method
 
 
-    // function loggingBooks(books) {
-    //     books.forEach(function(books, index) {
-    //         console.log("Book # " + (index + 1) + "\n" + "Book Title: " + books.title + "\n" + "Book Author: " + books.author.firstName + " " + books.author.lastName)
-    //     })
-    // }
-    //
-    // loggingBooks(books);
+    function loggingBooks(books) {
+        books.forEach(function(books, index) {
+            console.log("Book # " + (index + 1) + "\n" + "Book Title: " + books.title + "\n" + "Book Author: " + books.author.firstName + " " + books.author.lastName)
+        })
+    }
+
+    loggingBooks(books);
 
     /**
      * TODO:
