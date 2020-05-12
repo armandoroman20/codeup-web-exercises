@@ -33,10 +33,10 @@
 
 
     person.sayHello = function() {
-        return "Hello from " + this.firstName + " " + this.lastName + "!";
+        console.log("Hello from " + this.firstName + " " + this.lastName + "!");
     };
 
-    console.log(person.sayHello());
+    person.sayHello();
 
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
