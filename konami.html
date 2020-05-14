@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konami Code</title>
+
+
+</head>
+<body>
+<h1>Konami Code</h1>
+
+
+
+<script src="js/jquery-2.2.4.js"></script>
+<!--<script src="js/key-events.js"></script>-->
+<script>
+    "use strict";
+
+    function activateCheats() {
+
+        alert("HERE WE GO AGAIN!");
+
+        $(document).ready(function(){
+            $('body').css("background-image", "url('img/cj-dance.gif')");
+        });
+        // document.body.style.backgroundImage = "url('img/cj-dance.gif')";
+
+        var audio = new Audio('mp3/gta.mp3');
+        audio.play();
+    }
+
+    function enterTheDragon () {
+        alert("enter the dragon");
+
+        $(document).ready(function(){
+            $('body').css("background-image", "url('img/dragonball.gif')");
+        });
+
+        var audio = new Audio('mp3/dragonball 2.mp3');
+        audio.play();
+    }
+
+
+    var bucket = [];
+
+    var konamiCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13];
+    // var konamiCodePosition = 0;
+    var dragonCode = [37, 40, 39, 38, 37, 40, 39, 38, 13];
+    // var dragonCodePosition = 0;
+
+    $(document).keyup(function(event) {
+        // konamiCodePosition++;
+        // dragonCodePosition++;
+        bucket.push(event.keyCode);
+        if(bucket.join(',') === konamiCode.join(',')) {
+            activateCheats();
+            // konamiCodePosition = 0;
+        }  if(bucket.join(',') === dragonCode.join(',')) {
+            enterTheDragon();
+            // dragonCodePosition = 0;
+        }
+    });
+
+
+</script>
+</body>
+</html>
