@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JQuery Faq</title>
+    <style>
+        .invisible {
+            visibility: hidden;
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+<div class="park-List">
+    <dl>
+
+        <dt>Big Bend</dt>
+        <dd class="invisible">Known for the prominent bend in the Rio Grande.</dd>
+        <dt>Red wood</dt>
+        <dd class="invisible">Has the tallest trees on earth.</dd>
+        <dt>Rocky Mountains</dt>
+        <dd class="invisible">reaches an elevation of more than 12,000 feet.</dd>
+        <dt>Sequoia</dt>
+        <dd class="invisible">Has a an SUV named after it.</dd>
+        <dt>Yosemite</dt>
+        <dd class="invisible">Home to a wide variety of rare plant and animal specie.</dd>
+        <dt>YellowStone</dt>
+        <dd class="invisible">Erupting geysers</dd>
+        <dt>Olympia Park</dt>
+        <dd class="invisible">Street ball is king here.</dd>
+        <dt>Pinnacles</dt>
+        <dd class="invisible">Popular destination for rock climbers.</dd>
+        <dt>Brackenridge park</dt>
+        <dd class="invisible">Sundays are known for the car meets</dd>
+        <dt>Mount Rainier</dt>
+        <dd class="invisible">it is an active Stratovolcano.</dd>
+    </dl>
+</div>
+
+<button>turn on or off</button>
+<script src="js/jquery-2.2.4.js"></script>
+<script>
+
+        $("button").click(function(){
+            $("dd").toggleClass("invisible");
+        });
+
+        $('dt').click(function() {
+            $(this).css(
+                {'background-color': 'yellow'}
+                )
+        });
+
+</script>
+</body>
+</html>

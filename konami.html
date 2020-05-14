@@ -3,8 +3,14 @@
 <head>
     <title>Konami Code</title>
 
-
 </head>
+<style>
+    h1 {
+        margin: 0 auto;
+        text-align: center;
+        display: block;
+    }
+</style>
 <body>
 <h1>Konami Code</h1>
 
@@ -17,23 +23,34 @@
 
     function activateCheats() {
 
-        alert("HERE WE GO AGAIN!");
 
-        $(document).ready(function(){
-            $('body').css("background-image", "url('img/cj-dance.gif')");
-        });
-        // document.body.style.backgroundImage = "url('img/cj-dance.gif')";
+        $('body').css(
+            {
+                "background-image": "url('img/cj-dance.gif')",
+                "background-repeat": "no-repeat",
+                "background-size": "auto",
+                "background-position": "center center",
+                "margin-top": "20em"
+            });
+        $('h1').replaceWith("<h1>Here we go again</h1>");
+
 
         var audio = new Audio('mp3/gta.mp3');
         audio.play();
     }
 
     function enterTheDragon () {
-        alert("enter the dragon");
 
-        $(document).ready(function(){
-            $('body').css("background-image", "url('img/dragonball.gif')");
-        });
+        $('body').css(
+            {
+                "background": "url('img/dragonball.gif')",
+                "background-repeat": "no-repeat",
+                "background-size": "auto",
+                "background-position": "center center",
+                "margin-top": "20em"
+            }
+        );
+        $('h1').replaceWith("<h1>Enter the Dragon!</h1>");
 
         var audio = new Audio('mp3/dragonball 2.mp3');
         audio.play();
@@ -43,23 +60,39 @@
     var bucket = [];
 
     var konamiCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13];
-    // var konamiCodePosition = 0;
+    var konamiCodePosition = 0;
     var dragonCode = [37, 40, 39, 38, 37, 40, 39, 38, 13];
-    // var dragonCodePosition = 0;
+    var dragonCodePosition = 0;
 
     $(document).keyup(function(event) {
-        // konamiCodePosition++;
-        // dragonCodePosition++;
+        // this will push entered keys in to empty bucket
+        konamiCodePosition++;
+        dragonCodePosition++;
         bucket.push(event.keyCode);
-        if(bucket.join(',') === konamiCode.join(',')) {
+
+        if(bucket.join(',') === konamiCode.join(','))
+        {
             activateCheats();
-            // konamiCodePosition = 0;
-        }  if(bucket.join(',') === dragonCode.join(',')) {
+            konamiCodePosition = 0;
+
+        }
+        if(bucket.join(',') === dragonCode.join(','))
+        {
             enterTheDragon();
-            // dragonCodePosition = 0;
+            dragonCodePosition = 0;
+        } else {
+            konamiCodePosition = 0;
+            dragonCodePosition = 0;
         }
     });
 
+
+    // var konamiCodePosition = 0;
+    // var dragonCodePosition = 0;
+    // konamiCodePosition++;
+    // dragonCodePosition++;
+    // konamiCodePosition = 0;
+    // dragonCodePosition = 0;
 
 </script>
 </body>
