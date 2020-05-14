@@ -8,7 +8,9 @@
             visibility: hidden;
         }
 
-
+        .highlighter {
+            background-color: yellow;
+        }
 
     </style>
 </head>
@@ -18,42 +20,62 @@
     <dl>
 
         <dt>Big Bend</dt>
-        <dd class="invisible">Known for the prominent bend in the Rio Grande.</dd>
+        <dd>Known for the prominent bend in the Rio Grande.</dd>
+
         <dt>Red wood</dt>
-        <dd class="invisible">Has the tallest trees on earth.</dd>
+        <dd>Has the tallest trees on earth.</dd>
+
         <dt>Rocky Mountains</dt>
-        <dd class="invisible">reaches an elevation of more than 12,000 feet.</dd>
+        <dd>reaches an elevation of more than 12,000 feet.</dd>
+
         <dt>Sequoia</dt>
-        <dd class="invisible">Has a an SUV named after it.</dd>
+        <dd>Has a an SUV named after it.</dd>
+
         <dt>Yosemite</dt>
-        <dd class="invisible">Home to a wide variety of rare plant and animal specie.</dd>
+        <dd>Home to a wide variety of rare plant and animal specie.</dd>
+
         <dt>YellowStone</dt>
-        <dd class="invisible">Erupting geysers</dd>
-        <dt>Olympia Park</dt>
-        <dd class="invisible">Street ball is king here.</dd>
+        <dd>Erupting geysers</dd>
+
+        <dt>Carisbad Caverns</dt>
+        <dd>Carlsbad Caverns has 117 caves, the longest of which is over 120 miles (190 km) long.</dd>
+
         <dt>Pinnacles</dt>
-        <dd class="invisible">Popular destination for rock climbers.</dd>
-        <dt>Brackenridge park</dt>
-        <dd class="invisible">Sundays are known for the car meets</dd>
+        <dd>Popular destination for rock climbers.</dd>
+
+        <dt>Acadia</dt>
+        <dd>Acadia features the tallest mountain on the Atlantic coast of the United States</dd>
+
         <dt>Mount Rainier</dt>
-        <dd class="invisible">it is an active Stratovolcano.</dd>
+        <dd>it is an active Stratovolcano.</dd>
     </dl>
 </div>
 
 <button>turn on or off</button>
 <script src="js/jquery-2.2.4.js"></script>
+
+<!--In a HTML structure, create a definition list containing 10 FAQs about national parks.-->
+
+<!--Add a class to all dd elements named invisible.-->
+
+<!--Create some CSS rules that sets elements with the invisible class to visibility: hidden;.-->
+
+<!--Update the page with jQuery to add a link that toggles the class invisible on and off for all dd elements.-->
+
 <script>
 
-        $("button").click(function(){
+    $(document).ready(function() {
+        // $('dd').addClass('invisible');
+
+        $("button").click(function () {
             $("dd").toggleClass("invisible");
         });
 
-        $('dt').click(function() {
-            $(this).css(
-                {'background-color': 'yellow'}
-                )
+        $('dt').click(function () {
+            $(this).toggleClass('highlighter')
         });
 
+    });
 </script>
 </body>
 </html>
