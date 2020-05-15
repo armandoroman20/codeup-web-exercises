@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Review</title>
+</head>
+<body>
+<div class="container">
+    <div id="main">
+        <input type="text" id="input">
+        <button id="add-to-list">Add to List</button>
+
+        <h4>Favorite Food:</h4>
+        <ul id="favorite-food">
+            <li>Ramen</li>
+            <li>Sushi</li>
+            <li>Curry</li>
+        </ul>
+
+        <h4 id="change-me">Change Me</h4>
+
+        <h4>My Cohort: <span id="my-cohort"></span></h4>
+        <input type="text" id="cohort-name">
+        <button id="change-cohort">Update</button>
+
+        <br>
+        <button id="highlight">Highlight</button>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script>
+    "use strict";
+
+    var newFood = $('#input').val();
+
+    $('#add-to-list').click(function(){
+      $('#favorite-food').append('<li>' + newFood + '</li>')
+    });
+
+    $('#change-me').dblclick(function() {
+        $(this).css('background-color', 'purple')
+    });
+
+    var cohortName = $('#cohort-name').val();
+
+    $('#change-cohort').click(function() {
+        $('#my-cohort').text(cohortName)
+    });
+
+    $('#highlight').click(function () {
+        $('#my-cohort').css({
+            'background-color': 'yellow',
+        })
+    });
+
+    var timer = 3000;
+
+        setTimeout(function() {
+            $('.container').css("background-color", "pink");
+        }, timer);
+
+
+</script>
+</body>
+</html>
