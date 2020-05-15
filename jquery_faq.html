@@ -59,7 +59,7 @@
         <dt>Mount Rainier</dt>
         <dd>it is an active Stratovolcano.</dd>
     </dl>
-    <button id="ddon">turn on or off</button>
+    <button id="styleDD">turn on or off</button>
 </div>
 <div>
     <h3>State Parks of Oklahoma</h3>
@@ -102,7 +102,7 @@
     $(document).ready(function() {
         // $('dd').addClass('invisible');
 
-        $("#ddon").click(function () {
+        $("#styleDD").click(function () {
             $("dd").toggleClass("invisible");
         });
 
@@ -110,20 +110,19 @@
             $(this).toggleClass('highlighter')
         });
 
-        // $('#listcolor').click(function() {
-        //     $('ul').children().last().toggleClass('yellow')
-        // });
 
         // Create a button that, when clicked,
         // makes the last li in each ul have a yellow background.
             $('#listcolor').click(function() {
-                $('ul').children().next().next().next().toggleClass('yellow');
+                $('ul').each(function (index) {
+                    $(this).children().last().toggleClass('yellow')
+                });
             });
 
 
             //When any h3 is clicked, the lis underneath it should be bolded.
             $('h3').click(function() {
-                $('li').toggleClass('bolding')
+                $(this).next().children().toggleClass('bolding')
             });
 
         // when any list item is clicked,

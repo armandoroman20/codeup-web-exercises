@@ -165,8 +165,18 @@
 
     //====== warmup may 18th
 
+    // Write a JavaScript function that takes in a string and returns the number of words in the string (Numbers within a string should be counted as a word). If the function is ever passed an argument that is not a string, return the number 0. (
 
+function numberOfWordsInString (str) {
+    if (typeof str === "string") {
+        return str.split(" ").length;
+    } else {
+        return 0;
+    }
+}
 
+    console.log(numberOfWordsInString("This is 4 words"));
+    console.log(numberOfWordsInString(99));
 
 </script>
 </body>
