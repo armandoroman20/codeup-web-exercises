@@ -31,34 +31,39 @@
 <script>
     "use strict";
 
-    var newFood = $('#input').val();
+    $(document).ready(function() {
 
-    $('#add-to-list').click(function(){
-      $('#favorite-food').append('<li>' + newFood + '</li>')
+        $('#add-to-list').click(function(e){
+            var newFood = $('#input').val();
+            $('#favorite-food').append('<li>' + newFood + '</li>');
+            e.preventDefault();
+        });
+
+
+        $('#change-me').dblclick(function() {
+            $(this).css('background-color', 'purple')
+        });
+
+
+        $('#change-cohort').click(function(e) {
+            var cohortName = $('#cohort-name').val();
+            $('#my-cohort').text(cohortName);
+            e.preventDefault();
+        });
+
+        $('#highlight').click(function () {
+            $('#my-cohort').css({
+                'background-color': 'yellow',
+            })
+        });
+
+        var timer = 3000;
+
+            setTimeout(function() {
+                $('.container').css("background-color", "pink");
+            }, timer);
+
     });
-
-    $('#change-me').dblclick(function() {
-        $(this).css('background-color', 'purple')
-    });
-
-    var cohortName = $('#cohort-name').val();
-
-    $('#change-cohort').click(function() {
-        $('#my-cohort').text(cohortName)
-    });
-
-    $('#highlight').click(function () {
-        $('#my-cohort').css({
-            'background-color': 'yellow',
-        })
-    });
-
-    var timer = 3000;
-
-        setTimeout(function() {
-            $('.container').css("background-color", "pink");
-        }, timer);
-
 
 </script>
 </body>
