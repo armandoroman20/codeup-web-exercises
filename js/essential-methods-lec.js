@@ -131,7 +131,7 @@ $(document).ready(function() {
 
     $('ul').click(function() {
         console.log($(this).children().last().html());
-    })
+    });
 
     // TODO TOGETHER: When I click on RavenClaw heading, change the background color of list to blue
 

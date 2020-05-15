@@ -12,13 +12,23 @@
             background-color: yellow;
         }
 
+        .yellow {
+            background-color: yellow;
+        }
+
+        .bolding {
+            font-weight: bold;
+        }
+
+        .blue {
+            color: blue;
+        }
     </style>
 </head>
 <body>
 
 <div class="park-List">
     <dl>
-
         <dt>Big Bend</dt>
         <dd>Known for the prominent bend in the Rio Grande.</dd>
 
@@ -49,9 +59,34 @@
         <dt>Mount Rainier</dt>
         <dd>it is an active Stratovolcano.</dd>
     </dl>
+    <button id="ddon">turn on or off</button>
+</div>
+<div>
+    <h3>State Parks of Oklahoma</h3>
+    <ul>
+        <li>Alabaster Caverns</li>
+        <li>Arrowhead at Lake Eufaula</li>
+        <li>Beavers Bend</li>
+        <li>Black Mesa</li>
+    </ul>
+    <h3>State Parks of Texas</h3>
+    <ul>
+        <li>Abilene</li>
+        <li>Big Bend</li>
+        <li>Choke Canyon</li>
+        <li>Davis Mountains</li>
+    </ul>
+    <h3>State Parks of New mexico</h3>
+    <ul>
+        <li>Bluewater Lake</li>
+        <li>Bottomless Lakes</li>
+        <li>Brantley Lake</li>
+        <li>Caballo Lake</li>
+    </ul>
 </div>
 
-<button>turn on or off</button>
+<button id="listcolor">list color</button>
+
 <script src="js/jquery-2.2.4.js"></script>
 
 <!--In a HTML structure, create a definition list containing 10 FAQs about national parks.-->
@@ -67,7 +102,7 @@
     $(document).ready(function() {
         // $('dd').addClass('invisible');
 
-        $("button").click(function () {
+        $("#ddon").click(function () {
             $("dd").toggleClass("invisible");
         });
 
@@ -75,6 +110,27 @@
             $(this).toggleClass('highlighter')
         });
 
+        // $('#listcolor').click(function() {
+        //     $('ul').children().last().toggleClass('yellow')
+        // });
+
+        // Create a button that, when clicked,
+        // makes the last li in each ul have a yellow background.
+            $('#listcolor').click(function() {
+                $('ul').children().next().next().next().toggleClass('yellow');
+            });
+
+
+            //When any h3 is clicked, the lis underneath it should be bolded.
+            $('h3').click(function() {
+                $('li').toggleClass('bolding')
+            });
+
+        // when any list item is clicked,
+        // first li of the parent ul should have a font color of blue.
+            $('li').click(function() {
+                $(this).parent().children().first().toggleClass('blue')
+            })
     });
 </script>
 </body>
