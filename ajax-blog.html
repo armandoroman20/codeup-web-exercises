@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 </head>
 <body>
-<div id="posts">
+<div  id="posts">
 
 </div>
 <script src="https://code.jquery.com/jquery-2.2.4.js"
@@ -18,9 +18,24 @@
 
     $(document).ready(function() {
 
-        $.get("data/blog.json").done(function(data) {
-        });
 
+        function blogData() {
+            $.get("data/blog.json").done(function (data) {
+                for (var i = 0; i < data.length; i++) {
+                    var body = ('<body>' +
+                        '<div class="d-flex justify-content-center ">' + data[i].title + '</div>' +
+                        '<div>' + data[i].content + '</div>' +
+                        '<div>' + data[i].categories + '</div>' +
+                        '<div>' + data[i].date + '</div>' +
+                        '</body>');
+                    $('#posts').append(body);
+                }
+            }).fail(function () {
+                console.log('fail')
+            });
+        }
+
+        blogData()
     });
 </script>
 </body>
