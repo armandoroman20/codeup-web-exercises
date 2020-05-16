@@ -5,7 +5,7 @@
         "categories": [
             "tool"
         ],
-        "price": 20
+        "price": 200
     }, {
         "title": "Drill",
         "quantity": 5,
@@ -30,5 +30,13 @@
             "tool"
         ],
         "price": 10
+    },
+    {
+        "title": "level",
+        "quantity": 200,
+        "categories": [
+            "tool"
+        ],
+        "price": 1.50
     }
 ]
