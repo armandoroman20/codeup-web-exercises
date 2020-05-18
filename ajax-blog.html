@@ -4,9 +4,17 @@
     <meta charset="UTF-8">
     <title>Ajax Blog</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
 </head>
+<style>
+    .text {
+        font-family: 'Courgette', cursive;
+        font-size: 20px;
+    }
+</style>
 <body>
 <div  id="posts">
+
 
 </div>
 <script src="https://code.jquery.com/jquery-2.2.4.js"
@@ -23,8 +31,8 @@
             $.get("data/blog.json").done(function (data) {
                 for (var i = 0; i < data.length; i++) {
                     var body = ('<body>' +
-                        '<div class="d-flex justify-content-center ">' + data[i].title + '</div>' +
-                        '<div>' + data[i].content + '</div>' +
+                        '<div class="d-flex justify-content-center font-weight-bold ">' + data[i].title + '</div>' +
+                        '<div class=" text">' + data[i].content + '</div>' +
                         '<div>' + data[i].categories + '</div>' +
                         '<div>' + data[i].date + '</div>' +
                         '</body>');

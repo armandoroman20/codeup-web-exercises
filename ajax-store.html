@@ -42,13 +42,62 @@
             // TODO: Create an AJAX GET request for the file under data/inventory.json
 
 
+            //======HUNGS VERSION
 
+            // function ajaxData() {
+            //     $(function () {
+            //         $.ajax("./data/inventory.json").done(function (inventory) {
+            //             var str = " ";
+            //             inventory.forEach(function (item) {
+            //                 console.log(item);
+            //                 str += "<tr><td>" + item.title + "</td><td>"
+            //                     + item.quantity + "</td><td>" + item.price +
+            //                     "</td><td>" + item.categories + "</td></tr>";
+            //             });
+            //             $('#insertProducts').html(str)
+            //         }).fail(function () {
+            //             console.log('fail');
+            //         });
+            //     });
+            // }
+
+
+            //======Hungs method but refactored as a for loop
+            function ajaxData() {
+                $(function () {
+                    $.get('data/inventory.json').done(function (info) {
+                        var str = " ";
+                        for (var i = 0; i < info.length; i++) {
+                            str += "<tr><td>"
+                                + info[i].title +
+                                "</td><td>"
+                                + info[i].quantity +
+                                "</td><td>"
+                                + info[i].price +
+                                "</td><td>"
+                                + info[i].categories +
+                                "</td></tr>";
+                        }
+                        $('#insertProducts').html(str);
+                    }).fail(function () {
+                        console.log('fail');
+                    })
+                });
+            }
+
+
+            //=====FOR EACH METHOD
 
             // function ajaxData() {
             //     $.get("data/inventory.json").done(function (info) {
             //         var row = "";
             //         info.forEach(function (product) {
-            //             row += '<tr><td>' + product.title + '</td><td>' + product.quantity + '</td><td>' + product.price + '</td><td>' + product.categories + '</td></tr>';
+            //             row += '<tr>
+            //             <td>' + product.title + '</td>
+            //             <td>' + product.quantity + '</td>
+            //             <td>' + product.price + '</td>
+            //             <td>' + product.categories + '</td>
+            //             </tr>';
             //         });
             //         $('#insertProducts').append(row);
             //     }).fail(function(e) {
@@ -56,31 +105,34 @@
             //     });
             //     }
             // ajaxData();
-
-            function ajaxData() {
-                $.get("data/inventory.json").done(function (info) {
-                    for (var i = 0; i < info.length; i++) {
-                        var row = $('<tr>' +
-                            '<td>' + info[i].title + '</td>' +
-                            '<td>' + info[i].quantity + '</td>' +
-                            '<td>' + info[i].price + '</td>' +
-                            '<td>' + info[i].categories + '</td>' +
-                            '</tr>');
-                        $('#insertProducts').append(row);
-                    }
-                }).fail(function () {
-                    console.log('fail')
-                });
-            }
+            //
+            // function ajaxData() {
+            //     $.get("data/inventory.json").done(function (info) {
+            //         for (var i = 0; i < info.length; i++) {
+            //             var row = $('<tr>' +
+            //                 '<td>' + info[i].title + '</td>' +
+            //                 '<td>' + info[i].quantity + '</td>' +
+            //                 '<td>' + info[i].price + '</td>' +
+            //                 '<td>' + info[i].categories + '</td>' +
+            //                 '</tr>');
+            //             $('#insertProducts').append(row);
+            //         }
+            //     }).fail(function () {
+            //         console.log('fail')
+            //     });
+            // }
 
 
             ajaxData();
 
-
-            $('#refresh').click(function () {
-                $('#insertProducts').html('<tbody id="insertProducts"></tbody>');
+            $('#refresh').click(() => {
                 ajaxData();
             });
+
+            // $('#refresh').click(function () {
+            //     $('#insertProducts').html('<tbody id="insertProducts"></tbody>');
+            //     ajaxData();
+            // });
 
 
 
