@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather-Map</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css' rel='stylesheet'/>
+    <style>
+        #map {
+            width: 100%;
+            height: 300px
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <nav class="navbar navbar-light bg-primary">
+        <span class="navbar-brand text-white mb-0 h1">Weather App</span>
+        <span id="current-city" class="navbar-text text-white">Current Location:</span>
+    </nav>
+    <form class="form-inline mt-3 mb-3">
+        <div class="mr-1">Place</div>
+        <input id="input-city" class="form-control mr-sm-2" type="text" placeholder="Enter City" aria-label="Search">
+        <button id="search-city" class="btn btn-outline-primary btn-rounded btn-sm my-0" type="submit">Find</button>
+    </form>
+    <div class="weatherCards d-flex flex-row">
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 id="date0" class="d-flex justify-content-center"></h5>
+                <hr>
+                <div class="d-flex justify-content-center" id="max-min0"></div>
+                <div class="d-flex justify-content-center" id="icon"><img id="wicon0" src="" alt="Weather icon"></div>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li id="description0" class="list-group-item"> Description: </li>
+                <li id="humidity0" class="list-group-item"> Humidity: </li>
+                <li id="wind0" class="list-group-item"> Wind: </li>
+                <li id="pressure0" class="list-group-item"> Pressure: </li>
+            </ul>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 id="date1" class="d-flex justify-content-center"></h5>
+                <hr>
+                <div class="d-flex justify-content-center" id="max-min1"></div>
+                <div class="d-flex justify-content-center" id="icon"><img id="wicon1" src="" alt="Weather icon"></div>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li id="description1" class="list-group-item"> Description: </li>
+                <li id="humidity1" class="list-group-item"> Humidity: </li>
+                <li id="wind1" class="list-group-item"> Wind: </li>
+                <li id="pressure1" class="list-group-item"> Pressure: </li>
+            </ul>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 id="date2" class="d-flex justify-content-center"></h5>
+                <hr>
+                <div class="d-flex justify-content-center" id="max-min2"></div>
+                <div class="d-flex justify-content-center" id="icon"><img id="wicon2" src="" alt="Weather icon"></div>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li id="description2" class="list-group-item"> Description: </li>
+                <li id="humidity2" class="list-group-item"> Humidity: </li>
+                <li id="wind2" class="list-group-item"> Wind: </li>
+                <li id="pressure2" class="list-group-item"> Pressure: </li>
+            </ul>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 id="date3" class="d-flex justify-content-center"></h5>
+                <hr>
+                <div class="d-flex justify-content-center" id="max-min3"></div>
+                <div class="d-flex justify-content-center" id="icon"><img id="wicon3" src="" alt="Weather icon"></div>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li id="description3" class="list-group-item"> Description: </li>
+                <li id="humidity3" class="list-group-item"> Humidity: </li>
+                <li id="wind3" class="list-group-item"> Wind: </li>
+                <li id="pressure3" class="list-group-item"> Pressure: </li>
+            </ul>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 id="date4" class="d-flex justify-content-center"></h5>
+                <hr>
+                <div class="d-flex justify-content-center" id="max-min4"></div>
+                <div class="d-flex justify-content-center" id="icon"><img id="wicon4" src="" alt="Weather icon"></div>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li id="description4" class="list-group-item"> Description: </li>
+                <li id="humidity4" class="list-group-item"> Humidity: </li>
+                <li id="wind4" class="list-group-item"> Wind: </li>
+                <li id="pressure4" class="list-group-item"> Pressure: </li>
+            </ul>
+        </div>
+    </div>
+    <div id='map'></div>
+</div>
+
+
+<!-- JQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+<script src="js/keys.js"></script>
+<script src='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js'></script>
+<script src="js/mapbox-geocode-utils.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<!--key for mapbox and weathermap-->
+
+<script>
+    $(document).ready(function() {
+
+        "use strict";
+
+        // send a request to the OpenWeatherMap API
+
+        var weatherUrl = 'https://api.openweathermap.org/data/2.5/onecall';
+        var weatherOptions = {
+            lat: 29.4241,
+            lon: -98.4936,
+            appid: OPEN_WEATHER_APPID,
+            exclude: "minutely, current, hourly",
+            units: 'imperial'
+        };
+
+        function parseDate(timestamp) {
+            return new Date(timestamp * 1000).toLocaleDateString()
+        }
+
+        function weather() {
+            $.get(weatherUrl, weatherOptions).done(function (data) {
+                $('.weatherCards').add(function () {
+                    var iconcode0 = data.daily[0].weather[0].icon;
+                    var iconcode1 = data.daily[1].weather[0].icon;
+                    var iconcode2 = data.daily[2].weather[0].icon;
+                    var iconcode3 = data.daily[3].weather[0].icon;
+                    var iconcode4 = data.daily[4].weather[0].icon;
+                    var iconurl0 = "http://openweathermap.org/img/w/" + iconcode0 + ".png";
+                    var iconurl1 = "http://openweathermap.org/img/w/" + iconcode1 + ".png";
+                    var iconurl2 = "http://openweathermap.org/img/w/" + iconcode2 + ".png";
+                    var iconurl3 = "http://openweathermap.org/img/w/" + iconcode3 + ".png";
+                    var iconurl4 = "http://openweathermap.org/img/w/" + iconcode4 + ".png";
+                    $('#date0').html(parseDate(data.daily[0].dt));
+                    $('#max-min0').html("High: " + data.daily[0].temp.max + "<br>" + "Low: " + data.daily[0].temp.min);
+                    $('#wicon0').attr('src', iconurl0);
+                    $('#description0').html("Description: " + data.daily[0].weather[0].description);
+                    $('#humidity0').html("Humidity: " + data.daily[0].humidity);
+                    $('#wind0').html("Wind: " + data.daily[0].wind_speed);
+                    $('#pressure0').html("pressure: " + data.daily[0].pressure);
+
+                    $('#date1').html(parseDate(data.daily[1].dt));
+                    $('#max-min1').html("High: " + data.daily[1].temp.max + "<br>" + "Low: " + data.daily[1].temp.min);
+                    $('#wicon1').attr('src', iconurl1);
+                    $('#description1').html("Description: " + data.daily[1].weather[0].description);
+                    $('#humidity1').html("Humidity: " + data.daily[1].humidity);
+                    $('#wind1').html("Wind: " + data.daily[1].wind_speed);
+                    $('#pressure1').html("Pressure: " + data.daily[1].pressure);
+
+                    $('#date2').html(parseDate(data.daily[2].dt));
+                    $('#max-min2').html("High: " + data.daily[2].temp.max + "<br>" + "Low: " + data.daily[2].temp.min);
+                    $('#wicon2').attr('src', iconurl2);
+                    $('#description2').html("Description: " + data.daily[2].weather[0].description);
+                    $('#humidity2').html("Humidity: " + data.daily[2].humidity);
+                    $('#wind2').html("Wind: " + data.daily[2].wind_speed);
+                    $('#pressure2').html("pressure: " + data.daily[2].pressure);
+
+                    $('#date3').html(parseDate(data.daily[3].dt));
+                    $('#max-min3').html("High: " + data.daily[3].temp.max + "<br>" + "Low: " + data.daily[3].temp.min);
+                    $('#wicon3').attr('src', iconurl3);
+                    $('#description3').html("Description: " + data.daily[3].weather[0].description);
+                    $('#humidity3').html("Humidity: " + data.daily[3].humidity);
+                    $('#wind3').html("Wind: " + data.daily[3].wind_speed);
+                    $('#pressure3').html("pressure: " + data.daily[3].pressure);
+
+                    $('#date4').html(parseDate(data.daily[4].dt));
+                    $('#max-min4').html("High: " + data.daily[4].temp.max + "<br>" + "Low: " + data.daily[4].temp.min);
+                    $('#wicon4').attr('src', iconurl4);
+                    $('#description4').html("Description: " + data.daily[4].weather[0].description);
+                    $('#humidity4').html("Humidity: " + data.daily[4].humidity);
+                    $('#wind4').html("Wind: " + data.daily[4].wind_speed);
+                    $('#pressure4').html("pressure: " + data.daily[4].pressure);
+                    // display the unix timestamp as a human readable date
+                    console.log(parseDate(data.daily[0].dt));
+                    console.log(data.daily)
+                });
+            });
+        }
+
+        weather();
+
+        mapboxgl.accessToken = MAPBOX_KEY;
+
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v9',
+            zoom: 10,
+            center: [-98.4916, 29.4252],
+        });
+
+        var marker = new mapboxgl.Marker();
+
+        marker
+            .setLngLat({lng: -98.4916, lat: 29.4252})
+            .addTo(map)
+            .setDraggable(true);
+
+
+        function dragDrop() {
+            var lngLat = marker.getLngLat();
+            var longitude = lngLat.lng;
+            var latitude = lngLat.lat;
+            weatherOptions.lat = latitude;
+            weatherOptions.lon = longitude;
+            reverseGeocode({lng: longitude, lat: latitude}, MAPBOX_KEY).then(function(result) {
+                $('#current-city').empty();
+                $('#current-city').append('Current Location: ' + result)
+            });
+            weather();
+
+        }
+
+
+
+        var searchForCity = document.querySelector('#input-city');
+
+        $('#search-city').click(function(e) {
+            e.preventDefault();
+            geocode(searchForCity.value, MAPBOX_KEY).then(function(result) {
+                map.setCenter(result);
+                map.setZoom(10);
+                marker.setLngLat(result);
+                dragDrop();
+            })
+        });
+
+
+
+        weather();
+        marker.on("dragend", dragDrop);
+    });
+
+
+</script>
+
+</body>
+</html>

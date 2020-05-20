@@ -3,6 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>DOM Review</title>
+    <style>
+
+        .yellowbg {
+                background-color: yellow;
+        }
+
+        .purplebg {
+
+            background-color: purple;
+        }
+
+
+    </style>
 </head>
 <body>
 <div class="container">
@@ -39,10 +52,17 @@
             e.preventDefault();
         });
 
+        //======turn off and on
 
         $('#change-me').dblclick(function() {
-            $(this).css('background-color', 'purple')
+            $(this).toggleClass('purplebg');
         });
+
+        //=====just to turn on
+
+        // $('#change-me').dblclick(function() {
+        //     $(this).css('background-color', 'purple')
+        // });
 
 
         $('#change-cohort').click(function(e) {
@@ -51,11 +71,19 @@
             e.preventDefault();
         });
 
-        $('#highlight').click(function () {
-            $('#my-cohort').css({
-                'background-color': 'yellow',
-            })
+        //======turn off and on
+
+        $('#highlight').click(function() {
+            $('#my-cohort').toggleClass('yellowbg')
         });
+
+
+        //=====just to turn on
+        // $('#highlight').click(function () {
+        //     $('#my-cohort').css({
+        //         'background-color': 'yellow',
+        //     })
+        // });
 
         // var timer = 3000;
 

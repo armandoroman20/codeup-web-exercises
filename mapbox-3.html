@@ -14,7 +14,7 @@
     <script src="js/mapbox-geocode-utils.js"></script>
 
     <script>
-    mapboxgl.accessToken = mapboxKey;
+    mapboxgl.accessToken = MAPBOX_KEY;
 
     var map = new mapboxgl.Map({
     container: 'map',
@@ -23,13 +23,13 @@
     center: [-98.4936, 29.4241],
     });
 
-    geocode("Whitefish, MT", mapboxKey).then(function(result) {
+    geocode("Whitefish, MT", MAPBOX_KEY).then(function(result) {
         console.log(result);
         map.setCenter(result);
         map.setZoom(10);
     });
 
-    reverseGeocode({lng: -157.8060, lat: 21.2620}, mapboxKey).then(function(results) {
+    reverseGeocode({lng: -157.8060, lat: 21.2620}, MAPBOX_KEY).then(function(results) {
         // logs the address
         console.log(results);
     });

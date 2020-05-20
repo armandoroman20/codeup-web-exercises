@@ -1,1 +1,2 @@
-var mapboxKey = 'pk.eyJ1IjoiYXItcm9tYW4iLCJhIjoiY2s5dXFrdjFqMDRsdjNnbHJtaXRnOXBjdyJ9.Z7fFGfLTebWMbrhQ7O7pkg';
+const MAPBOX_KEY = 'pk.eyJ1IjoiYXItcm9tYW4iLCJhIjoiY2s5dXFrdjFqMDRsdjNnbHJtaXRnOXBjdyJ9.Z7fFGfLTebWMbrhQ7O7pkg';
+const OPEN_WEATHER_APPID = '804cdc8712b441536411f63e4184212e';
