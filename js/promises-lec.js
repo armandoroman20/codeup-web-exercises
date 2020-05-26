@@ -13,13 +13,13 @@ console.log(pokemonAPI);
 
 //TODO: add a method that runs if the Promise resolves successfully
 
-function jsonResponse(response){
-    return response.json();
-}
-
-function listNames (arr) {
-    arr.forEach(element => console.log(element.name));
-}
+// function jsonResponse(response){
+//     return response.json();
+// }
+//
+// function listNames (arr) {
+//     arr.forEach(element => console.log(element.name));
+// }
 
 
 pokemonPromise.then(response => response .json())
@@ -31,10 +31,10 @@ pokemonPromise.then(response => response .json())
 
 //=====above turns into bottom because i refactored
 
-pokemonAPI.then(jsonResponse)
-    .then(jsonResponse => jsonResponse.results)
-    .then(listNames)
-    .catch(error => console.log(error));
+// pokemonAPI.then(jsonResponse)
+//     .then(jsonResponse => jsonResponse.results)
+//     .then(listNames)
+//     .catch(error => console.log(error));
 
 //TODO: add a method that runs if the Promise fails
 
